@@ -1,0 +1,19 @@
+// this code gives signed integer overflow error
+
+class Solution {
+public:
+    int arraySign(vector<int>& nums) {
+        long long product =1;
+        for(int i: nums)
+        {
+            product*=i;
+            //cout<<"new product : "<<product;
+        }
+        if(product==0)
+            return 0;
+        else if(product>0)
+            return 1;
+        else 
+            return -1;
+    }
+};
