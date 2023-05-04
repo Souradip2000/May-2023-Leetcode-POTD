@@ -1,0 +1,34 @@
+// 69/82 testcases passed
+
+class Solution {
+public:
+    string predictPartyVictory(string senate) {
+        // count the number of r and d's
+        int arr[2]={0};
+        int len=0;
+        for(char i: senate)
+        {
+            len++;
+            if(i=='R')
+                arr[0]++;
+            else if(i=='D')
+                arr[1]++;
+        }
+        // 2 cases
+        // the one whose count is more wins
+        if(arr[0]>arr[1])
+            return "Radiant";
+        else if(arr[0]<arr[1])
+            return "Dire";
+        // if the count is equal, the one other than the last char wins 
+        else
+        {
+            char y='R';
+            char x=senate.back();
+            if(y==x)
+                return "Dire";
+            else
+                return "Radiant";
+        } 
+    }
+};
