@@ -17,3 +17,30 @@ public:
        return avg;
     }
 };
+
+
+// beats 100% of solutions
+
+// Time complexity - O(N)
+
+// learning: don't use the sort function always
+
+class Solution {
+public:
+    double average(vector<int>& salary) {
+       double ans;
+       int n=salary.size();
+       int maxi=salary[0];
+       int mini=salary[0];
+       for(int i=0; i<n; i++)
+       {
+           maxi=max(maxi,salary[i]);
+           mini=min(mini,salary[i]);
+           ans+=salary[i];
+       } 
+       ans-=maxi;
+       ans-=mini;
+       ans/=n-2;
+       return ans;
+    }
+};
