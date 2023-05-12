@@ -1,0 +1,22 @@
+// 1572 - Matrix Diagonal Sum
+
+// beats 70% of the solutions
+
+class Solution {
+public:
+    int diagonalSum(vector<vector<int>>& mat) {
+        int size=mat.size();
+        int sum=0;
+        int rows=size-1;
+        for(int i=0; i<size; i++)
+        {
+            sum+=mat[i][i];
+            sum+=mat[i][rows--];
+        }
+        if(size%2!=0)
+        {
+        sum-=mat[size/2][size/2];
+        }
+        return sum;
+    }
+};
