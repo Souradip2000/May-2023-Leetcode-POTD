@@ -1,2 +1,2 @@
 # May-2023-Leetcode-POTD
-Here I upload my solutions of Leetcode POTD for the month of May 2023
+This repository contains my solution code to Leetcode Problem of the Day for the month of May, 2023.
