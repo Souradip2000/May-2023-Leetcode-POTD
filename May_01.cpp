@@ -1,3 +1,5 @@
+// 1491. Average salary excluding the minimum and maximum salary
+
 // beats 32.2%
 // error faced - i was not using the sum variable data type as double. Instead I was using int. thus it was giving me all zeros after decimal places.
 
@@ -42,5 +44,24 @@ public:
        ans-=mini;
        ans/=n-2;
        return ans;
+    }
+};
+
+
+// revision
+// beats 100% of the solutions
+
+// time complexity: O(nlogn) + O(n-2)   =   O(nlogn)
+
+class Solution {
+public:
+    double average(vector<int>& salary) {
+        sort(salary.begin(),salary.end());
+        double sum=0;
+        for(int i=1; i<salary.size()-1; i++)
+            sum+=salary[i];
+        int values= salary.size()-2;
+        double avg= sum/values;
+        return avg;
     }
 };
